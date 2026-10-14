@@ -18,7 +18,7 @@ plot_clicks <- function(df_oulad) {
     ) +
     coord_cartesian(ylim = c(0, 10000)) +
     labs(
-      title = "Engajamento x Resultado Final",
+      title = "Resultado Final x Engajamento",
       x = "Resultado Final",
       y = "Total de Cliques"
     ) +

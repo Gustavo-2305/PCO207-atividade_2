@@ -8,4 +8,4 @@ glimpse(df_oulad)
 # gera e imprime o gráfico clicks_vs_grade
 clicks <- plot_clicks(df_oulad)
 print(clicks)
-
+# 
