@@ -2,6 +2,7 @@ library(tidyverse)
 source("grade.R")
 source("final_vs_clicks.R")
 source("clicks_vs_grade.R")
+source("attempts_vs_approval.R")
 
 par(ask = TRUE)
 
@@ -17,4 +18,7 @@ print(plot_final(df_oulad))
 
 # gera e imprime o gráfico registration_vs_final
 print(plot_clicks(df_oulad))
+
+# gera e imprime o gráfico attempts_vs_approval
+print(plot_attempts(df_oulad))
 
