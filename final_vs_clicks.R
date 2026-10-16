@@ -21,14 +21,14 @@ plot_final <- function(df_oulad) {
       limits = c(0, 10000)
     ) +
     labs(
-      title = "Resultado Final x Engajamento",
+      # title = "Resultado Final x Engajamento",
       x = "Resultado Final",
       y = "Total de Cliques"
     ) +
     theme_minimal(base_family = "roboto") +
     theme(
       panel.grid = element_blank(),
-      plot.title = element_text(color = "#1a505c"),
+      # plot.title = element_text(color = "#1a505c"),
       axis.text = element_text(color = "black"),
       axis.title = element_text(color = "black"),
       axis.ticks = element_line(color = "black"),

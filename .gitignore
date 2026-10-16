@@ -48,5 +48,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Others
 dados/*
 !dados/df_oulad.csv
+plot/*

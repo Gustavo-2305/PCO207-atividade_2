@@ -24,14 +24,14 @@ plot_attempts <- function(df_oulad) {
       limits = c(0, 100)
     ) +
     labs(
-      title = "Tentativas Anteriores x Taxa de Aprovação",
+      # title = "Tentativas Anteriores x Taxa de Aprovação",
       x = "Tentativas Anteriores",
       y = "Taxa de Aprovação"
     ) +
     theme_minimal(base_family = "roboto") +
     theme(
       panel.grid = element_blank(),
-      plot.title = element_text(color = "#1a505c"),
+      # plot.title = element_text(color = "#1a505c"),
       axis.text = element_text(color = "black"),
       axis.title = element_text(color = "black"),
       axis.ticks = element_line(color = "black"),

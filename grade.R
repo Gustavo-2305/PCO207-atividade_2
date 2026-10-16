@@ -24,14 +24,14 @@ plot_grade <- function(df_oulad) {
       limits = c(0, 5000)
     ) +
     labs (
-      title = "Nota Média",
+      # title = "Nota Média",
       x = "Nota Média",
       y = "Nº de Estudantes"
     ) +
     theme_minimal(base_family = "roboto") +
     theme(
       panel.grid = element_blank(),
-      plot.title = element_text(color = "#1a505c"),
+      # plot.title = element_text(color = "#1a505c"),
       axis.text = element_text(color = "black"),
       axis.title = element_text(color = "black"),
       axis.ticks = element_line(color = "black"),

@@ -20,15 +20,15 @@ df_vle_grouped <- df_vle %>%
 df_assessment_grouped <- df_assessment %>%
   group_by(id_student) %>%
   summarize(avg_grade = mean(as.numeric(score), na.rm = TRUE), .groups = 'drop')
-# %>%: passa o resultado à sua esquerda e como o primeiro argumento para a função que está à direita
-# na.rm = TRUE: ignora células vazias
-# .groups = 'drop': destrói agrupamentos internos
+  # %>%: passa o resultado à sua esquerda e como o primeiro argumento para a função que está à direita
+  # na.rm = TRUE: ignora células vazias
+  # .groups = 'drop': destrói agrupamentos internos
 
 # une todas as tabelas em df_oulad
 df_oulad <- df_info %>%
   left_join(df_registration, by = c("id_student", "code_module", "code_presentation")) %>%
   left_join(df_vle_grouped, by = c("id_student", "code_module", "code_presentation")) %>%
-  left_join(df_assessment_grouped, by = "id_student") %>%
+  left_join(df_assessment_grouped, by = c("id_student")) %>%
 
 # %>%: passa o resultado à sua esquerda e como o primeiro argumento para a função que está à direita
 # left_join: "cola" novas colunas à tabela que est'a esquerda, com base nas chaves em comum (by = ...).
@@ -38,11 +38,13 @@ df_oulad <- df_info %>%
     total_clicks = replace_na(total_clicks, 0),
     gender = as.factor(gender),
     region = as.factor(region),
-    highest_education = factor(highest_education, levels = c(
-      "No Formal quals", "Lower Than A Level", "A Level or Equivalent", 
-      "HE Qualification", "Post Graduate Qualification"
-    )),
-    final_result = factor(final_result, levels = c("Withdrawn", "Fail", "Pass", "Distinction"))
+    highest_education = as.factor(highest_education),
+    imd_band = as.factor(imd_band),
+    age_band = as.factor(age_band),
+    disability = as.factor(disability),
+    final_result = as.factor(final_result),
+    date_registration = as.numeric(date_registration),
+    date_unregistration = as.numeric(date_unregistration)
   )
 # mutate(...): Modifica colunas existentes ou cria novas.
 
